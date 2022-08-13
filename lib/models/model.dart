@@ -21,6 +21,13 @@ class TimersModel with ChangeNotifier {
     times.clear();
     notifyListeners();
   }
+
+  void changeSeconds(index, time) {
+    int timerNumber = times[index].timerNumber;
+    times.removeAt(index);
+    times.insert(index, TimerModel(timerNumber: timerNumber, time: time));
+    notifyListeners();
+  }
 }
 
 class TimerModel {
