@@ -39,7 +39,7 @@ class TimerWidgetState extends State<TimerWidget> {
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (time > 0) {
         setState(() => time--);
-        widget.model.changeSeconds(widget.index, time);
+        widget.model.changeSeconds(widget.index);
       } else {
         if (widget.model.times.length == 1) {
           widget.model.clearAll();
